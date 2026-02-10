@@ -23,6 +23,49 @@ public class MathUtilTest {
         assertNotEquals(expectedValue, actualAbs, 0.0005);
     }
 
+    @Test
+    public void testMathAdd() {
+        double x = 8;
+        double y = 10;
+
+        assertEquals(18, MathUtil.add(x, y), 0.0005);
+
+        x = 8;
+        y = -10;
+
+        assertEquals(-2, MathUtil.add(x, y), 0.0005);
+
+        int h = 8;
+        y = 10;
+
+        try {
+            double z = MathUtil.add(x, h);
+        } catch (Exception e) {
+            assertNotEquals(null, e);
+        }
+    }
+
+    @Test
+    public void testMathSub() {
+        double x = 12;
+        double y = 10;
+
+        assertEquals(2, MathUtil.sub(x, y), 0.0005);
+
+        x = 8;
+        y = -10;
+
+        assertEquals(18, MathUtil.sub(x, y), 0.0005);
+
+        int h = 8;
+        y = 10;
+
+        try {
+            double z = MathUtil.sub(x, h);
+        } catch (Exception e) {
+            assertNotEquals(null, e);
+        }
+    }
 
 
 }
